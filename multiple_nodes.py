@@ -35,4 +35,9 @@ app=graph.compile()
 
 result = app.invoke({"name": "Linda", "age": 31, "skills":["Python", "Machine Learning", "LangGraph"]})
 
-print(result['result'])  # Output: Linda ,welcome to the system, you are 31 years old! You have skills in: Python, Machine Learning, LangGraph
+print(result['result']) 
+
+
+# Export the graph as a PNG image
+with open("graph.png", "wb") as f:
+    f.write(app.get_graph().draw_mermaid_png())
